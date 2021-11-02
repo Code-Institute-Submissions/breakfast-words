@@ -12,19 +12,22 @@
 {% block content %}
     <div class="container-fluid">
         <div class="row home-band">
-            <div class="home-image">
-                <img class="img-fluid" src="/media/bg21-books.png" alt="Five new books"> width="1600" height="400" alt="">
+            <div class="col-6">
+                <table class="home-table">
+                    <tbody>
+                        <tr>
+                            <td class="align-middle display-4 logo-font text-white home-text">Words for breakfast</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </div>
-        <div class="text-overlays-container">
-            <div class="text-overlay text ">
-                <h1 class="display-4 logo-font text-white">Words for breakfast</h1>
-            </div>
-            <div class="row orange-band">
+            <div class="col-6 home-image">
+                <img class="img-fluid home-image-size" src="/media/bg21-books.png" alt="Five new books">
             </div>
         </div>
     </div>
 {% endblock %}
+
 
 <!--
                 <div class="my-5">

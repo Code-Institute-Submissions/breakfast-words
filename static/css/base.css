@@ -17,7 +17,7 @@ font-family: 'Open Sans', sans-serif; */
 .logo-font{
     font-family: 'Kreon', serif;
     color: white;
-    font-size: 20px;
+    font-weight: 700;
 }
 
 /* from Bulma https://bulma.io/, as suggested in Boutique Ado project */
@@ -29,6 +29,12 @@ font-family: 'Open Sans', sans-serif; */
     width: 1.5rem;
 }
 
+.nav-text{
+    text-transform: uppercase;
+    font-family: 'Kreon', serif;
+    font-color: black;
+    font-size: 15px;
+}
 
 /* .heading-font {
     color: #43257F;
@@ -51,25 +57,34 @@ font-family: 'Open Sans', sans-serif; */
 
 /* ----- 2     LAYOUT ----- */
 /* ----- 2.1   Layout general ----- */
+
+
 .home-band{
     background-color: black;
-    height: 100px;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    height: 410px;
+    width: 100%;
     position: absolute;
     }
 
 .home-image{
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    margin: 0;
+    height: 410px;
+    background-color: black;
+}
+
+.home-image-size{
+    margin: 0;
+    height: 410px;
+}
+
+.home-text{
+    margin: 0;
+    height: 410px;
+    background-color: black;
 }
 
 .intro-text{
-    background-colour: black;
+    background-color: black;
 }
 
 .orange-band{
@@ -81,6 +96,17 @@ font-family: 'Open Sans', sans-serif; */
     bottom: 0;
     position: absolute;
     }
+
+hr {
+    margin-top: 0;
+    margin-bottom: 0;
+    border: 0;
+    border-top: 10px solid #D37430;
+    }
+
+.nav-button{
+    border-color: none;
+}
 /*
 .image-container {
     padding-top: 137px;
