@@ -32,8 +32,25 @@ font-family: 'Open Sans', sans-serif; */
 .nav-text{
     text-transform: uppercase;
     font-family: 'Kreon', serif;
-    font-color: black;
+    color: black;
     font-size: 15px;
+}
+
+.nav-item{
+    text-transform: uppercase;
+    font-family: 'Kreon', serif;
+    color: black;
+    font-size: 15px;
+}
+
+.nav-colours{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Kreon', serif;
+    color: #af2937;
+    font-size: 15px;
+    border: 0px;
+    background-color: white;
 }
 
 /* .heading-font {
@@ -57,7 +74,6 @@ font-family: 'Open Sans', sans-serif; */
 
 /* ----- 2     LAYOUT ----- */
 /* ----- 2.1   Layout general ----- */
-
 
 .home-band{
     background-color: black;
@@ -106,6 +122,10 @@ hr {
 
 .nav-button{
     border-color: none;
+}
+
+.subscribe-position{
+    margin-left: 20px;
 }
 /*
 .image-container {
