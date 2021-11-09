@@ -1,7 +1,7 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto nav-text">
         <li class="nav-item dropdown">
-            <a class="logo-font nav-link text-black mr-5" href="#" id="about-link" 
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="about-link" 
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About
             </a>
         </li>
@@ -20,14 +20,14 @@
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Books
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-books-link">
-                <a href="" class="dropdown-item">Arts, fashion, culture</a>
-                <a href="" class="dropdown-item">Biography</a>
-                <a href="" class="dropdown-item">Cookery</a>
-                <a href="" class="dropdown-item">History </a>
-                <a href="" class="dropdown-item">Politics and society</a>
-                <a href="" class="dropdown-item">Science and nature</a>
-                <a href="" class="dropdown-item">Sex and gender</a>
-                <a href="" class="dropdown-item">New releases </a>
+                <a href="{% url 'books' %}?category=arts_fashion_culture" class="dropdown-item">Arts, fashion &amp; culture</a>
+                <a href="{% url 'books' %}?category=biograpy" class="dropdown-item">Biography</a>
+                <a href="{% url 'books' %}?category=cookery" class="dropdown-item">Cookery</a>
+                <a href="{% url 'books' %}?category=history" class="dropdown-item">History </a>
+                <a href="{% url 'books' %}?category=politics_society" class="dropdown-item">Politics &amp; society</a>
+                <a href="{% url 'books' %}?category=science_nature" class="dropdown-item">Science &amp; nature</a>
+                <a href="{% url 'books' %}?category=sex_gender" class="dropdown-item">Sex &amp; gender</a>
+                <a href="{% url 'books' %}?category=new_releases" class="dropdown-item">New releases </a>
             </div>
         </li>
         <li class="nav-item dropdown">
