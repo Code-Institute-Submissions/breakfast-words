@@ -127,6 +127,17 @@ hr {
 .subscribe-position{
     margin-left: 20px;
 }
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
+}
+
 /*
 .image-container {
     padding-top: 137px;
@@ -282,16 +293,28 @@ footer {
 /* ----- 3.1  Images quiz  ----- */
 
 /* ----- 4	MEDIA QUERIES ----- */
-@media (min-width: 992px)
-.default-promo-image .text-overlays-container {
-    position: absolute;
+@media (min-width: 992px){
+    .default-promo-image .text-overlays-container {
+        position: absolute;
+    }
 }
 
-@media (min-width: 768px)
-.paragraphs-item--page-promo-banner .text-overlay, .default-promo-image .text-overlay {
-    left: 12%;
-    padding: 0.75em;
+@media (min-width: 768px){
+    .paragraphs-item--page-promo-banner .text-overlay, .default-promo-image .text-overlay {
+        left: 12%;
+        padding: 0.75em;
+    }
 }
+
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+    body {
+        height: calc(100vh - 116px);
+    }
+}
+
 
 /* ----- Bootstrap 4 breakpoints ----- */
 

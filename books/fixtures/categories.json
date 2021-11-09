@@ -6,4 +6,5 @@
     {"pk": 5, "model": "books.category", "fields": {"name": "politics_society", "friendly_name": "Politics and society"}}, 
     {"pk": 6, "model": "books.category", "fields": {"name": "science_nature", "friendly_name": "Science and nature"}}, 
     {"pk": 7, "model": "books.category", "fields": {"name": "sex_gender", "friendly_name": "Sex and gender"}}, 
-    {"pk": 8, "model": "books.category", "fields": {"name": "new_releases", "friendly_name": "New releases"}}]
+    {"pk": 8, "model": "books.category", "fields": {"name": "new_releases", "friendly_name": "New releases"}}
+]

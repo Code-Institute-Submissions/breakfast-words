@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Book, Category
-admin.site.register(Book)
-admin.site.register(Category)
+
 
 class BookAdmin(admin.ModelAdmin):
     list_display = (
@@ -15,15 +14,20 @@ class BookAdmin(admin.ModelAdmin):
         'book_format',
         'pages',
         'sku',
-        'description'
-        'category'
-        'image_url'
+        'description',
+        'category',
+        'image_url',
+        'image',
     )
     ordering = ('sku',)
+
+
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'friendly_name',
         'name',
     )
+
+
 admin.site.register(Book, BookAdmin)
 admin.site.register(Category, CategoryAdmin)
