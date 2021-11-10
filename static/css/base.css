@@ -113,7 +113,8 @@ font-family: 'Open Sans', sans-serif; */
     position: absolute;
     }
 
-hr {
+.hr-orange {
+    height: 20px;
     margin-top: 0;
     margin-bottom: 0;
     border: 0;
@@ -128,14 +129,8 @@ hr {
     margin-left: 20px;
 }
 
-.overlay {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
-    background: white;
-    z-index: -1;
+.books-format{
+    padding-top: 50px;
 }
 
 /*

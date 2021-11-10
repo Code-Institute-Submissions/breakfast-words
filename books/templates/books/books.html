@@ -2,49 +2,51 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
+    <div class="container header-container books-format">
+        <div class="row books-format">
             <div class="col"></div>
         </div>
     </div>
 {% endblock %}
 
 {% block content %}
-<div class="overlay"></div>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col text-center mt-3">
-            <h2 class="logo-font">Books</h2>
-            <hr class="w-50 mb-1">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center mt-3">
+                <h2 class="logo-font">Books</h2>
+                <hr class="h-10 mb-1 orange-band">
+            </div>
         </div>
     </div>
     <div class="row">
-        <div class="book-container col-10 offset-1">
+        <div class="container col-10 offset-1 books-format">
             <div class="row mt-1 mb-2"></div>
             <div class="row">
                 {% for book in books %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                         <div class="card h-100 border-0">
-                            {% if book.image %}
+                            <!-- {% if book.image %}
                             <a href="">
                                 <img class="card-img-top img-fluid" src="{{ book.image.url }}" alt="{{ book.title }}">
                             </a>
-                            {% else %}
+                            {% else %} -->
                             <a href="{% url 'book_detail' book.id %}">
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ book.title }}">
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ book.title }}">
                             </a>
-                            {% endif %}
+                            <!-- {% endif %} -->
                             <div class="card-body pb-0">
                                 <p class="mb-0">{{ book.title }}</p>
                             </div>
                             <div class="card-footer bg-white pt-0 border-0 text-left">
                                 <div class="row">
                                     <div class="col">
-                                        <p class="mb-0">${{ book.author_firstname }} ${{ book.author_surname }}</p>
+                                        <p class="lead mb-0 text-left font-weight-bold">{{ book.author_firstname }} {{ book.author_surname }}</p>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <p class="mb-0">${{ book.price }}</p>
+                                        <p class="mb-0">£{{ book.price }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -71,7 +73,7 @@
                     {% endif %}
                 {% endfor %}
             </div>
+            </div>
         </div>
     </div>
-</div>
 {% endblock %}
