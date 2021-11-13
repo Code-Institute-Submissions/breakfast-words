@@ -56,7 +56,6 @@ def all_books(request):
 
 
 def book_detail(request, book_id):
-    """ A view to show individual book details """
 
     book = get_object_or_404(Book, pk=book_id)
 

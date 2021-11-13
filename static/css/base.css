@@ -145,6 +145,16 @@ font-family: 'Open Sans', sans-serif; */
     padding-top: 50px;
 }
 
+.basket-format{
+    padding-top: 50px;
+}
+
+.btn-outline-black {
+    background: white;
+    color: black !important;
+    border: 1px solid black;
+}
+
 /*
 .image-container {
     padding-top: 137px;
