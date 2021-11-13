@@ -16,7 +16,7 @@ class Category(models.Model):
 
 
 class Book(models.Model):
-    title = models.CharField(max_length=254, null=True, blank=True)
+    title = models.CharField(max_length=254)
     author_surname = models.CharField(max_length=254, null=True, blank=True)
     author_firstname = models.CharField(max_length=254)
     price = models.DecimalField(max_digits=6, decimal_places=2)

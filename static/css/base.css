@@ -53,6 +53,18 @@ font-family: 'Open Sans', sans-serif; */
     background-color: white;
 }
 
+.book-title-text{
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    font-size: 20px;
+}
+
+.author-name-text{
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    font-size: 18px;   
+}
+
 /* .heading-font {
     color: #43257F;
     font-family: 'Work Sans', sans-serif;
