@@ -19,6 +19,4 @@ def add_to_basket(request, item_id):
 
     request.session['basket'] = basket
 
-# 194 Test it: print the basket from the session in the add to basket view.
-    print(request.session['basket'])
     return redirect(redirect_url)

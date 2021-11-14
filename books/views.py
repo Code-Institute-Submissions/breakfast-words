@@ -60,8 +60,7 @@ def book_detail(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
 
     context = {
-        'books': books,
-        'search_term': query,
+        'book': book,
     }
 
     return render(request, 'books/book_detail.html', context)

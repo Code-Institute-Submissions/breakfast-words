@@ -16,7 +16,8 @@
                 <h2 class="logo-font">Books</h2>
                 {% for c in current_categories %}
                 <a class="category-badge text-decoration-none" href="{% url 'books' %}?category={{ c.name }}">
-                    <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
+                    <span class="p-2 mt-2 badge badge-white text-black rounded-0 border 
+                        border-dark">{{ c.friendly_name }}</span>
                 </a>
             {% endfor %}
 
@@ -27,17 +28,31 @@
     <div class="row">
         <div class="container col-10 offset-1 books-format">
             <div class="row mt-1 mb-2">
-                <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center 
+                    justify-content-md-end">
                     <div class="sort-select-wrapper w-50">
-                        <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                            <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                            <option value="arts_fashion_culture" {% if current_sorting == 'arts_fashion_culture' %}selected{% endif %}>Arts, fashion and culture</option>
-                            <option value="biography" {% if current_sorting == 'biography' %}selected{% endif %}>Biography and autobiography</option>
-                            <option value="cookery" {% if current_sorting == 'cookery' %}selected{% endif %}>Cookery</option>
-                            <option value="history" {% if current_sorting == 'history' %}selected{% endif %}>History</option>
-                            <option value="politics_society" {% if current_sorting == 'politics_society' %}selected{% endif %}>Politics and society</option>
-                            <option value="science_nature" {% if current_sorting == 'science_nature' %}selected{% endif %}>Science and nature</option>
-                            <option value="sex_gender" {% if current_sorting == 'sex_gender' %}selected{% endif %}>Sex and gender</option>
+                        <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border 
+                            border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                            <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>
+                                Sort by...</option>
+                            <option value="arts_fashion_culture" 
+                                {% if current_sorting == 'arts_fashion_culture' %}selected{% endif %}>
+                                Arts, fashion and culture</option>
+                            <option value="biography" {% if current_sorting == 'biography' %}selected{% endif %}>
+                                Biography and autobiography</option>
+                            <option value="cookery" {% if current_sorting == 'cookery' %}selected{% endif %}>
+                                Cookery</option>
+                            <option value="history" {% if current_sorting == 'history' %}selected{% endif %}>
+                                History</option>
+                            <option value="politics_society" 
+                                {% if current_sorting == 'politics_society' %}selected{% endif %}>
+                                Politics and society</option>
+                            <option value="science_nature" 
+                                {% if current_sorting == 'science_nature' %}selected{% endif %}>
+                                Science and nature</option>
+                            <option value="sex_gender" 
+                                {% if current_sorting == 'sex_gender' %}selected{% endif %}
+                                >Sex and gender</option>
                         </select>
                     </div>
                 </div>
@@ -46,7 +61,8 @@
                         {% if search_term or current_categories or current_sorting != 'None_None' %}
                             <span class="small"><a href="{% url 'books' %}">Books home</a> | </span>
                         {% endif %}
-                        {{ products|length }} Books{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                        {{ books|length }} Books{% if search_term %} found for <strong>"{{ search_term }}"
+                            </strong>{% endif %}
                     </p>
                 </div>
             </div>
@@ -60,7 +76,8 @@
                             </a>
                             {% else %}
                             <a href="{% url 'book_detail' book.id %}">
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ book.title }}">
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.jpg" 
+                                alt="{{ book.title }}">
                             </a>
                             {% endif %}
                             <div class="card-body pb-0">
@@ -69,12 +86,20 @@
                             <div class="card-footer bg-white pt-0 border-0 text-left">
                                 <div class="row">
                                     <div class="col">
-                                        <p class="lead mb-0 text-left author-name-text">{{ book.author_firstname }} {{ book.author_surname }}</p>
+                                        <p class="lead mb-0 text-left 
+                                            author-name-text">{{ book.author_firstname }} {{ book.author_surname }}</p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <p class="mb-0">£{{ book.price }}</p>
+                                        <p class="mb-0">£{{ book.price }}
+                                            {% if book.category %}
+                                            <p class="small mt-1 mb-0">
+                                                <a class="text-muted" 
+                                                    href="{% url 'books' %}?category={{ book.category.name }}">
+                                                    <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
+                                                </a>
+                                        </p>
                                     </div>
                                 </div>
                             </div>

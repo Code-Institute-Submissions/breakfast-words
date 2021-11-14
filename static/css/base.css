@@ -155,6 +155,12 @@ font-family: 'Open Sans', sans-serif; */
     border: 1px solid black;
 }
 
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 /*
 .image-container {
     padding-top: 137px;
