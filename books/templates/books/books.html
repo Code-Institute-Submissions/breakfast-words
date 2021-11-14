@@ -15,12 +15,11 @@
             <div class="col text-center mt-3">
                 <h2 class="logo-font">Books</h2>
                 {% for c in current_categories %}
-                <a class="category-badge text-decoration-none" href="{% url 'books' %}?category={{ c.name }}">
-                    <span class="p-2 mt-2 badge badge-white text-black rounded-0 border 
-                        border-dark">{{ c.friendly_name }}</span>
-                </a>
-            {% endfor %}
-
+                    <a class="category-badge text-decoration-none" href="{% url 'books' %}?category={{ c.name }}">
+                        <span class="p-2 mt-2 badge badge-white text-black rounded-0 border 
+                            border-dark">{{ c.friendly_name }}</span>
+                    </a>
+                {% endfor %}
                 <hr class="h-10 mb-1 orange-band">
             </div>
         </div>
@@ -70,7 +69,7 @@
                 {% for book in books %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                         <div class="card h-100 border-0">
-                             {% if book.image %}
+                            {% if book.image %}
                             <a href="{% url 'book_detail' book.id %}">
                                 <img class="card-img-top img-fluid" src="{{ book.image.url }}" alt="{{ book.title }}">
                             </a>
@@ -92,14 +91,15 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <p class="mb-0">£{{ book.price }}
-                                            {% if book.category %}
-                                            <p class="small mt-1 mb-0">
-                                                <a class="text-muted" 
-                                                    href="{% url 'books' %}?category={{ book.category.name }}">
-                                                    <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
-                                                </a>
+                                        <p class="mb-0">£{{ book.price }}</p>
+                                        {% if book.category %}
+                                        <p class="small mt-1 mb-0">
+                                            <a class="text-muted" 
+                                                href="{% url 'books' %}?category={{ book.category.name }}">
+                                                <i class="fas fa-tag mr-1"></i>{{ book.category.friendly_name }}
+                                            </a>
                                         </p>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +134,6 @@
             <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
         </a>	
     </div>
-
 {% endblock %}
 
 {% block postloadjs %}
