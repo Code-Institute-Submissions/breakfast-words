@@ -2,10 +2,10 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.conf import settings
 
-from .forms import OrderForm
-from basket.contexts import basket_contents
-
 import stripe
+
+from basket.contexts import basket_contents
+from .forms import OrderForm
 
 
 def checkout(request):
@@ -26,14 +26,17 @@ def checkout(request):
         currency=settings.STRIPE_CURRENCY,
     )
 
-    print(intent)
-
     order_form = OrderForm()
+
+    if not stripe_public_key:
+        messages.warning(request, 'Stripe public key is missing. \
+            Did you forget to set it in your environment?')
+
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
-        'stripe_public_key': 'pk_live_51JjPYqBBi58M3Z5kI1r10PKJeqNMPkNYvuEmP09TK7XoqOus62RBUEgo4sX4SKTvOqCZEcbGvUq1y9z6dx07expM00f5GdS2Uz',
-        'client_secret': 'test client secret',
+        'stripe_public_key': stripe_public_key,
+        'client_secret': intent.client_secret,
     }
 
     return render(request, template, context)
