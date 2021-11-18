@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+import json
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
@@ -10,6 +12,23 @@ from .forms import OrderForm
 from .models import Order, OrderLineItem
 
 
+@require_POST
+def cache_checkout_data(request):
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'basket': json.dumps(request.session.get('basket', {})),
+            'save_info': request.POST.get('save_info'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, 'Sorry, your payment cannot be \
+            processed at the moment. Please try again later.')
+        return HttpResponse(content=e, status=400)
+
+
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
@@ -18,8 +37,7 @@ def checkout(request):
         basket = request.session.get('basket', {})
 
         form_data = {
-            'first_name': request.POST['first_name'],
-            'last_name': request.POST['last_name'],
+            'full_name': request.POST['full_name'],
             'street_address1': request.POST['street_address1'],
             'street_address2': request.POST['street_address2'],
             'town_or_city': request.POST['town_or_city'],
@@ -44,7 +62,7 @@ def checkout(request):
                         order_line_item.save()
                 except Book.DoesNotExist:
                     messages.error(request, (
-                        "One of the books in your bag wasn't found in our database. "
+                        "One of the books in your basket wasn't found in our database. "
                         "Please contact us for assistance.")
                     )
                     order.delete()
