@@ -16,7 +16,7 @@ font-family: 'Open Sans', sans-serif; */
 
 .logo-font{
     font-family: 'Kreon', serif;
-    color: white;
+    color: #000000;
     font-weight: 700;
 }
 
@@ -143,6 +143,10 @@ font-family: 'Open Sans', sans-serif; */
 
 .books-format{
     padding-top: 50px;
+}
+
+.books-format-01{
+    padding-top: 10px;
 }
 
 .basket-format{

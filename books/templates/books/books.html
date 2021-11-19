@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container books-format">
+    <div class="container header-container">
         <div class="row books-format">
             <div class="col"></div>
         </div>
@@ -10,8 +10,8 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container-fluid books-format">
+        <div class="row books-format-01">
             <div class="col text-center mt-3">
                 <h2 class="logo-font">Books</h2>
                 {% for c in current_categories %}
