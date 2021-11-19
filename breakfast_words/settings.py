@@ -178,3 +178,6 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+print(STRIPE_PUBLIC_KEY)
+print(STRIPE_SECRET_KEY)
+print(STRIPE_WH_SECRET)
