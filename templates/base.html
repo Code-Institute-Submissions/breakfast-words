@@ -84,10 +84,11 @@
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         {% if request.user.is_authenticated %}
                                             {% if request.user.is_superuser %}
-                                                <li><a class="dropdown-item" href="{% url 'add_product' %">Stock management</a></li>
+                                                <a href="{% url 'add_book' %}" class="dropdown-item">
+                                                    Stock management</a>
                                             {% endif %}
                                                 <li><a class="dropdown-item" href="{% url 'profile' %}">My profile</a></li>
-                                                <li><a class="dropdown-item" href="% url 'account_logout' %">Sign out</a></li>
+                                                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Sign out</a></li>
                                         {% else %}
                                                 <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
                                                 <li><a class="dropdown-item" href="{% url 'account_login' %}">Sign in</a></li>
