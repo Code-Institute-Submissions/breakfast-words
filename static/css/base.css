@@ -84,14 +84,52 @@ font-family: 'Open Sans', sans-serif; */
 */
 /* ----- 1.6   ??PAGE / APP ----- */
 
+/* BG TEST REMOVE BG TEST REMOVE BG TEST REMOVE BG TEST REMOVE BG TEST REMOVE BG TEST REMOVE BG TEST REMOVE
+
+.default-promo-image{
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: transparent;
+}
+
+.default-promo-image .default-promo-image-inside {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.text-overlays-container {
+    position: initial;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+promo-banner .text-overlay, .default-promo-image .text-overlay {
+    left: 12%;
+    padding: 0.75em;
+}
+
+.paragraphs-item--page-promo-banner .text-overlay, .default-promo-image .text-overlay {
+    left: 0;
+    right: 50%;
+    background-color: #000000;
+    text-align: left;
+    padding: 0;
+}
+*/
+
 /* ----- 2     LAYOUT ----- */
 /* ----- 2.1   Layout general ----- */
 
 .home-band{
     background-color: black;
     height: 410px;
-    width: 100%;
-    position: absolute;
+    /* width: 100%; */
+    /* position: absolute; */
     }
 
 .home-image{
@@ -119,9 +157,9 @@ font-family: 'Open Sans', sans-serif; */
     background-color: #D37430;
     height: 20px;
     left: 0;
-    top: 0;
+    /* top: 0; */
     right: 0;
-    bottom: 0;
+    /* bottom: 0; */
     position: absolute;
     }
 
@@ -415,7 +453,7 @@ footer {
 }
 
 
-/* ----- 5 AULLAUTH ----- */
+/* ----- 5 ALLAUTH ----- */
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */

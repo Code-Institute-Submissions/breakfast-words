@@ -40,75 +40,78 @@
         <title>Words for breakfast{% block extra_title %}{% endblock %}</title>
     </head>
     <body>
-        <header class="container-fluid fixed-top">
-            <!-- top line -->
-            <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
-                <!-- site title -->
-                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                    <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                        <h2 class="logo-font text-black my-0"><strong>Words for breakfast</strong></h2>
-                    </a>
-                </div>
-                <!-- search -->
-                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                    <form method="GET" action="{% url 'books' %}">
-                        <div class="input-group w-100">
-                            <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search">
-                            <div class="input-group-append">
-                                <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                                    <span class="icon">
-                                        <i class="fas fa-search"></i>
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <!-- my account -->
-                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                    <!-- my account -->	
-                    <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                        <!-- my account dropdown -->
-                        <li class="list-inline-item dropdown">
-                            <a class="nav-text nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <div class="text-center">
-                                    <div><i class="fas fa-user fa-lg"></i></div>
-                                    <p class="my-0">My account</p>
-                                </div>
-                            </a>
-                            <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                                {% if request.user.is_authenticated %}
-                                    {% if request.user.is_superuser %}
-                                        <a href="" class="dropdown-item">Product management</a>
-                                    {% endif %}
-                                    <a href="" class="dropdown-item">Dashboard</a>
-                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Sign out</a>
-                                {% else %}
-                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                    <a href="{% url 'account_login' %}" class="dropdown-item">Sign in</a>
-                                {% endif %}
-                            </div>
-                        </li>
-                        <!-- basket -->
-                        <li class="list-inline-item">
-                            <a class="{% if grand_total %}text-info 
-                                font-weight-bold{% else %}text-black{% endif %} nav-link" 
-                                href="{% url 'view_basket' %}">
-                                <div class="text-center">
-                                    <div><i class="fas fa-shopping-basket"></i></div>
-                                    <p class="my-0">
-                                        {% if grand_total %}
-                                            ${{ grand_total|floatformat:2 }}
+        <header>
+            <div class="container-fluid">
+                <!-- top line -->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="{% url 'home' %}">
+                            <h2 class="logo-font text-black my-0">Words for breakfast</h2>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <!-- basket -->
+                                <li class="nav-item">
+                                    <a class="{% if grand_total %}text-info 
+                                        font-weight-bold{% else %}text-black{% endif %} nav-link" 
+                                        href="{% url 'view_basket' %}">
+                                        <div class="text-center">
+                                            <div><i class="fas fa-shopping-basket"></i>
+                                            </div>
+                                            <p class="my-0">
+                                                {% if grand_total %}
+                                                    £{{ grand_total|floatformat:2 }}
+                                                {% else %}
+                                                    £0.00
+                                                {% endif %}
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <div class="text-center">
+                                            <div><i class="fas fa-user fa-lg"></i></div>
+                                            <p class="my-0">My account</p>
+                                        </div>        
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        {% if request.user.is_authenticated %}
+                                            {% if request.user.is_superuser %}
+                                                <li><a class="dropdown-item" href="{% url 'add_product' %">Stock management</a></li>
+                                            {% endif %}
+                                                <li><a class="dropdown-item" href="{% url 'profile' %}">My profile</a></li>
+                                                <li><a class="dropdown-item" href="% url 'account_logout' %">Sign out</a></li>
                                         {% else %}
-                                            £0.00
+                                                <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+                                                <li><a class="dropdown-item" href="{% url 'account_login' %}">Sign in</a></li>
                                         {% endif %}
-                                    </p>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <form class="d-flex" method="GET" action="{% url 'books' %}">
+                                <div class="input-group w-100">
+                                    <input class="form-control border border-black rounded-0" type="text" 
+                                        name="q" placeholder="Search">
+                                    <div class="input-group-append">
+                                        <button class="form-control btn btn-black border border-black 
+                                            rounded-0" type="submit">
+                                            <span class="icon">
+                                                <i class="fas fa-search"></i>
+                                            </span>
+                                        </button>
+                                    </div>
                                 </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0"></div>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
             </div>
             <!-- mobile -->
             <div class="row bg-white">

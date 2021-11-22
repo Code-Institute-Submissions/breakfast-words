@@ -1,0 +1,22 @@
+Hello {{ order.full_name }}!
+
+This is a confirmation of your books order Fromn Words fdr Breakfast. Your order information is below:
+
+Order number: {{ order.order_number }}
+Order date: {{ order.date }}
+
+Order total: ${{ order.order_total }}
+Delivery: ${{ order.delivery_cost }}
+Grand total: ${{ order.grand_total }}
+
+Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
+
+We have your phone number as {{ order.phone_number }}.
+
+If you have any questions, please feel free to contact us at {{ contact_email }}.
+
+Thank you for your order.
+
+Best wishes
+
+Words for Breakfast
