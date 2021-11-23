@@ -118,7 +118,7 @@ WSGI_APPLICATION = 'breakfast_words.wsgi.application'
 
 # if 'DATABASE_URL' in os.environ:
 DATABASES = {
-    'default': dj_database_url.parse('postgres://zvxaffeqmlufoj:966d312715c4dad5e61fc6b2539141f20f654deeccd1319df49f1446d02eed2f@ec2-54-74-60-70.eu-west-1.compute.amazonaws.com:5432/dfcb9dv69me73n')
+    'default': dj_database_url.parse('')
 }
 # else:
 #    DATABASES = {
