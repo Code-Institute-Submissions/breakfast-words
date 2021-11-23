@@ -1,1 +1,1 @@
-web: gunicorn breakfast-words.wsgi:application
+web: gunicorn boutique_ado.wsgi:application
