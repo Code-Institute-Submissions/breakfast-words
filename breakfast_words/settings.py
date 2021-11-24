@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-*ie0#272*1@trx6(4+)d$r@)@i@=lvefc%0u^)4f!896n+=5a#')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = ['breakfast-words.herokuapp.com', 'localhost']
 
