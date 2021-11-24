@@ -117,15 +117,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#          'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 DATABASES = {
-    'default': dj_database_url.parse('postgres://zvxaffeqmlufoj:966d312715c4dad5e61fc6b2539141f20f654deeccd1319df49f1446d02eed2f@ec2-54-74-60-70.eu-west-1.compute.amazonaws.com:5432/dfcb9dv69me73n')
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 
 
