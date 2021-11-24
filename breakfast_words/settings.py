@@ -27,7 +27,6 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['breakfast-words.herokuapp.com', 'localhost']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -113,20 +112,21 @@ LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'breakfast_words.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
+# Database
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#          'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+DATABASES = {
+    'default': dj_database_url.parse('postgres://zvxaffeqmlufoj:966d312715c4dad5e61fc6b2539141f20f654deeccd1319df49f1446d02eed2f@ec2-54-74-60-70.eu-west-1.compute.amazonaws.com:5432/dfcb9dv69me73n')
+}
 
 
 # Password validation
@@ -147,7 +147,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -160,7 +159,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
