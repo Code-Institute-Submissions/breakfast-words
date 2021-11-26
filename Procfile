@@ -1,1 +1,1 @@
-web: gunicorn breakfast-words.wsgi:application
+web: gunicorn breakfast_words.wsgi:application
