@@ -151,7 +151,7 @@ Users will arrive on the home page, with a simple image and overview of the site
 7. The Bookshop page unceremoniously displays available books and provides a shop checkout.
 
 # Data
-Because of the stability and regularity of the data, both of subscribers and of books, SQL is an appropriate data management approach, in this case using [PostgreSQL](https://www.postgresql.org/) with Django.
+Because of the stability and regularity of the data, both of subscribers and of books, SQL is an appropriate data management approach, in this case using Django's SQLite.
 
 ## Books model
 The fields used in ‘books’ are
@@ -241,27 +241,27 @@ Too many to note
 * Django
 
 ## Frameworks, libraries & programs
-* Gitpod
-* [Git](https://git-scm.com/)
-  * Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
-* [GitHub](https://github.com/)
-  * GitHub is used to store the projects code after being pushed from Git.
-* Heroku
-  * The site is deployed on Heroku
-* AWS
-  * Static files are delivered by AWS
-
-* [Django](https://www.djangoproject.com/)
-
-* [jQuery](https://jquery.com/)
-  * jQuery was used to simplify the use of JavaScript
-
-* [Bootstrap](https://getbootstrap.com/)
-* [Google Fonts](https://fonts.google.com/)
-  * Google Fonts was used to import into style.css the variable fonts used throughout (Kreon and Open Sans)
-
-* [Figma](https://www.figma.com/)
-  * Figma was used to create the wireframes during the design process.
+* HTML5
+* CSS3
+* JavaScript
+* [jQuery](https://jquery.com/) - to simplify the use of JavaScript
+* [Python3](https://www.python.org/downloads/)
+* [Django](https://docs.djangoproject.com/en/3.2/)
+* [SQLite](https://www.sqlite.org/index.html) - database
+* [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - for Django forms
+* [PostgreSQL](https://www.postgresql.org/) - upload SQL database to PostgreSQL for deployment in Heroku
+* [Psycopg2](https://pypi.org/project/psycopg2/) - PostreSQL database adapter for Python
+* [Gunicorn](https://gunicorn.org/) - Python server, used with Heroku
+* [Gitpod](https://www.gitpod.io/) - development environment
+* [GitHub](https://github.com/) - code storage
+* [Stripe](https://stripe.com/en-gb) - payments system
+* [Heroku](https://www.heroku.com/) - deployment
+* [AWS S3 Bucket](https://aws.amazon.com/) - store static files for deployment
+* Gmail - for email integration
+* [Bootstrap](https://getbootstrap.com/) - for basic templates
+* [FontAwesome](https://fontawesome.com/) - for images
+* [Google Fonts](https://fonts.google.com/) - for the site's fonts
+* [Figma])https://www.figma.com/) - for creating wireframes
 
 # Testing
 ## Validators
@@ -339,7 +339,7 @@ It is necessary to create an [AWS](https://aws.amazon.com) account and set up an
 
 # Credits
 ## Code
-1. I have used much code and taken many ideas from the Full Stack Frameworks Development walkthrough project, Boutique Ado. 
+1. I have used very much code throughout the project and taken many ideas from the Full Stack Frameworks Development walkthrough project, Boutique Ado. 
 2. Bootstrap was used for the main layout elements of the site – forms, cards, navbar, and buttons, and Bootstrap [documentation](https://getbootstrap.com/docs/5.1/getting-started/introduction/) followed
 3. For the Navbar, Bootstrap was supplemented with code taken from [Granta magazine](https://granta.com/)
 4. Some home page layout taken from [Baillie Gifford Prize](https://thebailliegiffordprize.co.uk/) (since changed)
@@ -348,7 +348,8 @@ It is necessary to create an [AWS](https://aws.amazon.com) account and set up an
 7. I regularly consulted
 * [StackOverflow](https://stackoverflow.com/), eg on horizontal scroll on books pages: (Horizontally scrollable list of cards in Bootstrap)[https://stackoverflow.com/questions/35993300/horizontally-scrollable-list-of-cards-in-bootstrap]
 * [W3Schools](https://www.w3schools.com/)
-* [Geeks for Geeks](https://www.geeksforgeeks.org)
+* I don't think there's any other borrowed code, unless some incorrect code has been left in accidentally; it certainly won't be doing any good
+
 
 ## Content
 * Book listings and images [London Review Bookshop](https://www.londonreviewbookshop.co.uk/booklists)
