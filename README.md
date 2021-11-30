@@ -9,12 +9,7 @@ The historian Theodore Zeldin wrote in 2015 in *The hidden pleasures of life* th
 Simply stated, this site attempts to provide that.
 
 # Note
-**This project has gone horribly and irretrievably wrong in pretty well everything it set out to do, and failed in probably every single point. In fact, in many aspects, it has gone backwards since I started it, and it’s certainly a backwards step from my previous projects.**
-
-
-**Superusers**
-* jplsu03; djn0th2119; maeve.maccoll@gmail.com
-* jplsu05; suyn0th2119; james05@jamestest.com
+**This project has gone horribly and irretrievably wrong in pretty well everything it set out to do, and failed in probably every single point. In fact, in many aspects, it has gone backwards since I started it, and it’s certainly a backwards step from my previous projects. I felt I wasn't learning any more by continuously asking Tutor Support for help, so decided to leave the project as it is, on the grounds that I need more time to consolidate any learning I might manage.**
 
 
 # User experience (UX)
@@ -355,7 +350,7 @@ It is necessary to create an [AWS](https://aws.amazon.com) account and set up an
 * Book listings and images [London Review Bookshop](https://www.londonreviewbookshop.co.uk/booklists)
 
 ## Acknowledgements
-a Many thanks to the tutor support team for hanging on in during some long and painful queries
+a Many thanks to the tutor support team for their  patience and encouragement
 
 James Lancaster 29 November 2021
 
